@@ -46,11 +46,11 @@ try:
      streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()
-#don't run anything past here while we troubleshot
 
 
 
-streamlit.header("The fruit load list contains:")
+
+streamlit.header("View Our Fruit List -Add Your Favorites!")
 #snowflake-related functions
 def get_fruit_load_list():
  with my_cnx.cursor() as my_cur:
@@ -63,7 +63,7 @@ if streamlit.button('Get Fruit Load List'):
  my_data_rows = get_fruit_load_list()
  streamlit.dataframe(my_data_rows)
 
-streamlit.stop()
+#streamlit.stop()
 #=== adding second Text Entry Box
 def insert_row_snowflake(new_fruit):
  with my_cnx.cursor() as my_cur:
