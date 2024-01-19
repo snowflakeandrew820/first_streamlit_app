@@ -57,3 +57,8 @@ my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.text("The fruite load list contains:")
 streamlit.dataframe(my_data_rows)
+
+#=== adding second Text Entry Box
+
+add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
+streamlit.write('The user want to add ', add_my_fruit)
